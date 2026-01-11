@@ -8,13 +8,14 @@ class WeatherHelper:
     @staticmethod
     def fetch_weather(city):
         api_key = Constants.WEATHER_API_KEY
+        host = Constants.WEATHER_HOST
 
         if not api_key:
             raise Exception("API key not configured")
 
         headers = {
             "X-RapidAPI-Key": api_key,
-            "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+            "X-RapidAPI-Host": host,
         }
 
         params = {"q": city}
